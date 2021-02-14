@@ -1,32 +1,27 @@
-export default class TalentsNav {
-  constructor(menu, content) {
-    this.qualitiesMenu = document.querySelectorAll(menu);
-    this.qualitiesContent = document.querySelectorAll(content);
-    this.activeClass = 'active';
+export default function talentsNav(menu, content) {
+  const qualitiesMenu = document.querySelectorAll(menu);
+  const qualitiesContent = document.querySelectorAll(content);
+  const activeClass = 'active';
+
+  function activeTalent(index) {
+    qualitiesMenu.forEach((qualityMenu) => {
+      qualityMenu.classList.remove(activeClass);
+    });
+    qualitiesContent.forEach((qualityContent) => {
+      qualityContent.classList.remove(activeClass);
+    });
+    qualitiesMenu[index].classList.add(activeClass);
+    qualitiesContent[index].classList.add(activeClass);
   }
 
-  activeTalent(index) {
-    this.qualitiesMenu.forEach((qualityMenu) => {
-      qualityMenu.classList.remove(this.activeClass);
-    });
-    this.qualitiesContent.forEach((qualityContent) => {
-      qualityContent.classList.remove(this.activeClass);
-    });
-    this.qualitiesMenu[index].classList.add(this.activeClass);
-    this.qualitiesContent[index].classList.add(this.activeClass);
-  }
-
-  addTalentEvent() {
-    this.qualitiesMenu.forEach((qualityMenu, index) => {
-      qualityMenu.addEventListener('click', () => this.activeTalent(index));
+  function addTalentEvent() {
+    qualitiesMenu.forEach((qualityMenu, index) => {
+      qualityMenu.addEventListener('click', () => activeTalent(index));
     });
   }
 
-  init() {
-    if(this.qualitiesMenu.length && this.qualitiesContent.length) {
-      this.activeTalent(0);
-      this.addTalentEvent();
-    }
-    return this;
+  if(qualitiesMenu.length && qualitiesContent.length) {
+    activeTalent(0);
+    addTalentEvent();
   }
 }
