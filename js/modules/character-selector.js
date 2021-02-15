@@ -75,15 +75,17 @@ export default class characterSelector {
   }
 
   closeGuide() {
-    this.guideCard.classList = 'card character-guide close';
-    this.guideCard.innerHTML = '';
-    this.characterCards.forEach((card) => {
-      card.classList.remove(this.closeClass, this.activeClass);
-    });
-    this.backButtonExists = false;
-    window.removeEventListener('resize', this.updatePageContent);
-    this.button.remove();
-    this.button = undefined;
+    setTimeout(() => {
+      this.guideCard.classList = 'card character-guide close';
+      this.guideCard.innerHTML = '';
+      this.characterCards.forEach((card) => {
+        card.classList.remove(this.closeClass, this.activeClass);
+      });
+      this.backButtonExists = false;
+      window.removeEventListener('resize', this.updatePageContent);
+      this.button.remove();
+      this.button = undefined;
+    }, 1);
   }
 
   updatePageContent() {
@@ -251,7 +253,6 @@ export default class characterSelector {
   addGuideEvent() {
     this.characterCards.forEach((card, index) => {
       card.addEventListener('click', () => this.activeCard(index));
-      card.addEventListener('touchstart', () => this.activeCard(index));
     });
   }
 
