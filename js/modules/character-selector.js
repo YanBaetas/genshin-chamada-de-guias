@@ -251,7 +251,7 @@ export default class characterSelector {
   addGuideEvent() {
     this.characterCards.forEach((card, index) => {
       card.addEventListener('click', () => this.activeCard(index));
-      card.addEventListener('touchend', () => this.activeCard(index));
+      card.addEventListener('touchstart', () => this.activeCard(index));
     });
   }
 
