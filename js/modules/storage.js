@@ -9,7 +9,6 @@ export default class Storage {
    }
 
   init() {
-    console.log(this.get());
     if(this.get()) {
       document.querySelector('header').style.background = this.get();;
     }
