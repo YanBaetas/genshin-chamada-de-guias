@@ -571,6 +571,30 @@ footer {
 }
 
 /*Mobile =================================*/
+@media (hover: none) {
+  .zhongli:hover,
+  .xiao:hover {
+    animation: none;
+  }
+  .zhongli:hover .character,
+  .xiao:hover .character {
+    transform: none;
+  }
+  
+  .zhongli.active.character-card {
+    animation: zhongli-zoom .7s forwards;
+  }
+  .xiao.active.character-card{
+    animation: xiao-zoom .7s forwards;
+  }
+
+  .zhongli.active .character,
+  .xiao.active .character {
+    transform: scale(1.1);
+    transition: .7s;
+  }
+}
+
 @media (max-width: 800px) {
   .back {
     display: none;
