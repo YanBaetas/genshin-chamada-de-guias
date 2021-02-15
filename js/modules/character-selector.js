@@ -20,6 +20,10 @@ export default class characterSelector {
 
   activeCard(index) {
 
+    if(this.characterCards[index].classList.contains('active')) {
+      return '';
+    }
+
     if(this.characterCards[index].classList.contains('xiao')) {
       this.guideCard.classList.add('xiao');
       this.guideCard.innerHTML = this.createXiaoGuideElement();
@@ -49,9 +53,11 @@ export default class characterSelector {
     if(this.button === undefined) {
       this.createBackButton();
     }
-    
-    const closeGuideMobile = document.querySelector('.close-guide');
-    this.addCloseEvent(closeGuideMobile);
+
+    setTimeout(() => {
+      const closeGuideMobile = document.querySelector('.close-guide');
+      this.addCloseEvent(closeGuideMobile);
+    }, 700);
   }
 
   createBackButton() {
@@ -245,6 +251,7 @@ export default class characterSelector {
   addGuideEvent() {
     this.characterCards.forEach((card, index) => {
       card.addEventListener('click', () => this.activeCard(index));
+      card.addEventListener('touchend', () => this.activeCard(index));
     });
   }
 
