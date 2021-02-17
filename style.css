@@ -51,7 +51,7 @@ ul {
 }
 
 /* Titles ==============================*/
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: Georgia, 'Times New Roman', monospace;
 }
 h1 {
@@ -126,6 +126,7 @@ footer {
   color: white;
   text-align: center;
   margin-top: 1.2rem;
+  padding: 0 1rem;
 }
 
 /* Main ==============================*/
@@ -172,7 +173,7 @@ footer {
   overflow: hidden;
 }
 
-.zhongli h2, .zhongli h3 {
+.zhongli h2, .zhongli h3, .zhongli h4 {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -220,7 +221,7 @@ footer {
   overflow: hidden;
 }
 
-.xiao h2, .xiao h3 {
+.xiao h2, .xiao h3, .xiao h4 {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -283,6 +284,7 @@ footer {
   text-align: center;
   color: var(--light-red);
   margin-top: .5rem;
+  margin-bottom: .5rem;
   font-size: .75rem;
   animation: fadeInDown .7s forwards;
 }
@@ -371,7 +373,7 @@ footer {
 }
 
 .xiao .qualities .qualities-selector h2 {
-  padding: 15px 9px;
+  padding: 10px 4px;
   border-radius: 4px;
   margin: 1px;
   color: #FFF;
@@ -417,6 +419,127 @@ footer {
   background: var(--light-red);
 }
 
+.build div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.build [data-tab="builds-menu"] h2 {
+  font-size: 1.5rem;
+}
+
+.build [data-tab="builds-menu"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.xiao .build [data-tab="builds-menu"] h2:hover{
+  background: var(--dark-anemo);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.xiao .build [data-tab="builds-menu"] h2 {
+  padding: 10px 4px;
+  border-radius: 4px;
+  margin: 1px;
+  color: #FFF;
+  background: var(--anemo);
+}
+
+.xiao .build [data-tab="builds-menu"] h2.active {
+  background: var(--dark-anemo);
+}
+
+.build [data-tab="builds-menu"] div {
+  display: none;
+}
+
+.build-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  border-radius: 4px;
+  margin: 1rem auto 1rem auto;
+  background: #BEC5C6;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.build-description > div {
+  display: none;
+}
+
+.build-description > div.active {
+  display: block;
+  animation: fadeInDown .7s forwards;
+}
+
+.build-description .artifacts {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.build-description .weapons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.build-description .weapons div {
+  position: relative;
+  margin-right: 2px;
+}
+
+.build-description img{
+  background: var(--card-background);
+  box-shadow: 1px 1px 5px var(--dark-anemo),
+              inset 0 0 0 2px var(--card-background),
+              inset 0 0 0 3px var(--dark-anemo);
+  border-radius: 4px;
+}
+
+.build-description .weapons img {
+  display: block;
+  margin: 0 auto;
+}
+.build-description .weapons .anemo-star {
+  content: "";
+  position: absolute;
+  background: url('./assets/anemo-star.svg') no-repeat center;
+  background-size: 15px;
+  top: 3px;
+  left: 13px;
+  width: 15px;
+  height: 15px;
+  z-index: 100;
+}
+
+.build-description .weapons p {
+  background: var(--dark-anemo);
+  color: white;
+  opacity: .7;
+  margin-top: -20px;
+  padding: 0 1px;
+  max-width: 100px;
+}
+
+.build-description p {
+  border-radius: 4px;
+  text-align: center;
+}
+
+.build-description p.description {
+  padding: 11px;
+  border: 1px solid var(--card-background);
+  text-align: left;
+}
+
 /*ZHONGLI!!!*/
 .zhongli .talents img {
   border: 1px solid var(--geo);
@@ -443,7 +566,7 @@ footer {
 }
 
 .zhongli .qualities .qualities-selector h2 {
-  padding: 15px 9px;
+  padding: 10px 4px;
   border-radius: 4px;
   margin: 1px;
   color: #FFF;
@@ -457,6 +580,36 @@ footer {
 .zhongli .qualities .advantages ul li::before {
   content: "";
   background: var(--dark-geo);
+}
+
+.zhongli .build [data-tab="builds-menu"] h2:hover{
+  background: var(--dark-geo);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.zhongli .build [data-tab="builds-menu"] h2 {
+  padding: 10px 4px;
+  border-radius: 4px;
+  margin: 1px;
+  color: #FFF;
+  background: var(--geo);
+}
+
+.zhongli .build [data-tab="builds-menu"] h2.active {
+  background: var(--dark-geo);
+}
+
+.build-description .weapons .geo-star {
+  content: "";
+  position: absolute;
+  background: url('./assets/geo-star.svg') no-repeat center;
+  background-size: 15px;
+  top: 3px;
+  left: 13px;
+  width: 15px;
+  height: 15px;
+  z-index: 100;
 }
 
 .geo-element {
