@@ -1,5 +1,6 @@
 import talentsNav from './talents-nav.js';
 import qualitiesNav from './qualities-nav.js';
+import buildsNav from './builds-nav.js';
 import Storage from './storage.js';
 
 export default class characterSelector {
@@ -47,16 +48,19 @@ export default class characterSelector {
     this.characterCards[index].classList.add(this.activeClass);
     this.guideCard.classList.add(this.activeClass);
 
-    qualitiesNav('.qualities-selector h2', '.qualities-description div');
-    talentsNav('[data-tab="talents-menu"] img', '.talent-description div', '.xiao.character-guide h2');
+    qualitiesNav('.qualities-selector h2', '.qualities-description > div');
+    talentsNav('[data-tab="talents-menu"] img', '.talent-description > div', '.xiao.character-guide h2');
+    buildsNav('[data-tab="builds-menu"] h2', '.build-description > div');
     
     if(this.button === undefined) {
       this.createBackButton();
     }
 
     setTimeout(() => {
-      const closeGuideMobile = document.querySelector('.close-guide');
-      this.addCloseEvent(closeGuideMobile);
+      const closeGuideMobile = document.querySelectorAll('.close-guide');
+      closeGuideMobile.forEach((item) => {
+        this.addCloseEvent(item);
+      })
     }, 700);
   }
 
@@ -167,6 +171,52 @@ export default class characterSelector {
           </p>
         </div>
       </div>
+      
+      <div class="build">
+        <h2>Build</h2>
+        <div data-tab="builds-menu">
+          <h2 class="active">Anemo DPS</h2>
+        </div>
+      </div>
+      <div class="build-description">
+        <div>
+          <h3>Artefatos</h3>
+          <div class="artifacts">
+            <img src="./assets/gladiator-artifact.png" alt="Artefato - Set Gladiador" title="Artefato - Set Gladiador">
+            <img src="./assets/anemo-artifact.png" alt="Artefato - Set Sombra Verde" title="Artefato - Set Sombra Verde">
+          </div>
+          <p>2 Gladiador / 2 Sombra Verde</p>
+          <h4>Atributos Principais</h4>
+          <p>Atq% > Dano Anemo > Dano Crit</p>
+          <h4>Sub-Atributos</h4>
+          <p>Dano Crit > Taxa Crit > Atq > Recarga</p>
+          <h3>Armas</h3>
+          <div class="weapons">
+            <div>
+              <span class="anemo-star"></span>
+              <img src="./assets/jade-spear.png" alt="Arma - Lança de Jade Primitiva" title="Arma - Lança de Jade Primitiva">
+              <p>Lança de Jade</p>
+            </div>
+            <div>
+              <img src="./assets/deathmatch.png" alt="Arma - Lança do Duelo" title="Arma - Lança do Duelo">
+              <p>Lança do Duelo</p>
+            </div>
+            <div>
+              <img src="./assets/blackcliff-pole.png" alt="Arma - Lança Obscura" title="Arma - Lança Obscura">
+              <p>Lança Obscura</p>
+            </div>
+          </div>
+          
+          <p class="description">
+            Xiao é um personagem focado totalmente no DPS, portanto sua build é bem direta. O objetivo é maximizar seu dano 
+            durante sua Explosão Elemental, portanto o conjunto de 2 peças de Gladiador + Sombra Verde torna-se essencial
+            em sua build. A Lança de Jade Primitiva é sua melhor arma devido aos seus bônus de taxa crítica e aumento no ataque.
+            Outras boas opções de arma são a Lança do Duelo e Lança Obscura, que encontram-se atreladas ao passe de batalha e a loja
+            da Paimon respectivamente. A Lança Protótipo Estelar do Ferreiro é uma ótima opção F2P caso as outras opções estejam fora de alcance.
+          </p>
+        </div>
+      </div>
+      <div class="close-guide"><span>Fechar Guia</span></div>
     `;
     return guideDiv;
   }
@@ -246,7 +296,131 @@ export default class characterSelector {
           </p>
         </div>
       </div>
+
+      <div class="build">
+        <h2>Build</h2>
+        <div data-tab="builds-menu">
+          <h2 class="active">DPS Físico</h2>
+          <h2>Burst Sup</h2>
+          <h2>Full Sup</h2>
+        </div>
+      </div>
+      <div class="build-description">
+        <div>
+          <h3>Artefatos</h3>
+          <div class="artifacts">
+            <img src="./assets/bloodstained-artifact.png" alt="Artefato - Set Cavaleiro Sanguinário" title="Artefato - Set Cavaleiro Sanguinário">
+            <img src="./assets/gladiator-artifact.png" alt="Artefato - Set Gladiador" title="Artefato - Set Gladiador">
+          </div>
+          <p>2 Cavaleiro Sanguinário / 2 Gladiador</p>
+          <h4>Atributos Principais</h4>
+          <p>Atq% > Dano Físico > Dano Crit</p>
+          <h4>Sub-Atributos</h4>
+          <p>Dano Crit > Taxa Crit > Atq > HP</p>
+          <h3>Armas</h3>
+          <div class="weapons">
+            <div>
+              <span class="geo-star"></span>
+              <img src="./assets/crescent-pike.png" alt="Arma - Pique Crescente" title="Arma - Pique Crescente">
+              <p>Pique Crescente</p>
+            </div>
+            <div>
+              <img src="./assets/jade-spear.png" alt="Arma - Lança de Jade" title="Arma - Lança do Jade">
+              <p>Lança de Jade</p>
+            </div>
+            <div>
+              <img src="./assets/vortex-vanquisher.png" alt="Arma - Perfuradora Prismática" title="Arma - Perfuradora Prismática">
+              <p>Perfuradora Prismática</p>
+            </div>
+          </div>
+          
+          <p class="description">
+            Com os buffs da nova versão, Zhongli passa a causar um ótimo dano em seus ataques normais, permitindo que esta build seja bem mais
+            eficiente do que era anteriormente, alie isso aos novos buffs de seu Escudo e do elemento Geo e você terá uma perfeita consistência.
+            A lança Pique Crescente, que pode ser construída no ferreiro, é a melhor arma utilizada nesta build, tornando-a
+            uma ótima opção F2P. A habilidade passiva da lança associada aos rápidos ataques de Zhongli aumentam drásticamente seu
+            DPS sendo melhor até mesmo do que a Lança de Jade ou Perfuradora Prismática. O ponto fraco desta build é o dano
+            reduzido de sua Habilidade e Explosão Elemental.
+          </p>
+        </div>
+
+        <div>
+          <h3>Artefatos</h3>
+          <div class="artifacts">
+            <img src="./assets/noblesse-artifact.png" alt="Artefato - Set Antigo Ritual Real" title="Artefato - Set Antigo Ritual Real">
+            <img src="./assets/archaic-artifact.png" alt="Artefato - Set Pedra Arcaica" title="Artefato - Set Pedra Arcaica">
+          </div>
+          <p>2 Ritual Real / 2 Pedra Arcaica</p>
+          <h4>Atributos Principais</h4>
+          <p>Atq% > Dano Geo > Dano Crit</p>
+          <h4>Sub-Atributos</h4>
+          <p>Dano Crit > Taxa Crit > Atq > HP/Recarga</p>
+          <h3>Armas</h3>
+          <div class="weapons">
+            <div>
+              <span class="geo-star"></span>
+              <img src="./assets/jade-spear.png" alt="Arma - Lança de Jade Primitiva" title="Arma - Lança de Jade Primitiva">
+              <p>Lança de Jade</p>
+            </div>
+            <div>
+              <span class="geo-star"></span>
+              <img src="./assets/vortex-vanquisher.png" alt="Arma - Perfuradora Prismática" title="Arma - Perfuradora Prismática">
+              <p>Perfuradora Prismática</p>  
+            </div>
+            <div>
+              <img src="./assets/deathmatch.png" alt="Arma - Lança do Duelo" title="Arma - Lança do Duelo">
+              <p>Lança do Duelo</p>
+            </div>
+          </div>
+          
+          <p class="description">
+            A Explosão Elemental de Zhongli possui um dano monstruoso, então nada mais correto do que utilizar artefatos que aumentem seu dano.
+            Personagens capazes de gerar partículas elementais são essênciais para recarregar sua Explosão Elemental e personagens Geo,
+            como o Viajante ou Albedo, são capazes de combar com suas Habilidades Elementais, pois criam estruturas Geo para ressoar com a
+            Habilidade Elemental do Zhongli. As melhores armas para a Build de Zhongli são as lanças 5* ou a Lança do Duelo obtida no Passe de Batalha, 
+            e a melhor opção F2P é a Borla Preta. As lanças que possuem Recarga de Energia como a Lança de Favonius são boas caso o seu 
+            time não consiga gerar muitas partículas elementais.
+          </p>
+        </div>
+
+        <div>
+          <h3>Artefatos</h3>
+          <div class="artifacts">
+            <img src="./assets/archaic-artifact.png" alt="Artefato - Set Pedra Arcaica" title="Artefato - Set Pedra Arcaica">
+          </div>
+          <p>4 Pedra Arcaica</p>
+          <h4>Atributos Principais</h4>
+          <p>HP%/Atq > HP%/Dano Geo > HP%/Dano Crit</p>
+          <h4>Sub-Atributos</h4>
+          <p>HP > Dano Crit > Taxa Crit > Atq/Recarga</p>
+          <h3>Armas</h3>
+          <div class="weapons">
+            <div>
+              <span class="geo-star"></span>
+              <img src="./assets/vortex-vanquisher.png" alt="Arma - Perfuradora Prismática" title="Arma - Perfuradora Prismática">
+              <p>Perfuradora Prismática</p>
+            </div>
+            <div>
+              <img src="./assets/favonius-lance.png" alt="Arma - Lança de Favonius" title="Arma - Lança de Favonius">
+              <p>Lança de Favonius</p>
+            </div>
+            <div>
+              <img src="./assets/deathmatch.png" alt="Arma - Lança do Duelo" title="Arma - Lança do Duelo">
+              <p>Lança do Duelo</p>
+            </div>
+          </div>
+          
+          <p class="description">
+            Esta build possui diversas ramificações. É possível focar em HP, assim como tentar algo mais híbrido. O foco principal desta build porém, é
+            criar o Escudo de Jade para resistir infinitos ataques, diminuir a resistência dos oponentes e, utilizando o conjunto de 4 peças
+            da Pedra Arcaica, gerar um escudo do elemento do seu DPS principal para aumentar o dano daquele elemento em particular.
+            O dano desta build é bem reduzido, porém o suporte fornecido pelas habilidades de Zhongli é o ponto alto desta build.
+          </p>
+        </div>
+      </div>
+      <div class="close-guide"><span>Fechar Guia</span></div>
     `;
+    // <img src="./assets/vortex-vanquisher.png" alt="Arma - Perfuradora Prismática" title="Perfuradora Prismática">
     return guideDiv;
   }
 
