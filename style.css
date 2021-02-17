@@ -77,7 +77,8 @@ h2 {
 }
 
 /* ScrollBar ==============================*/
-.xiao.character-guide::-webkit-scrollbar {
+.xiao.character-guide::-webkit-scrollbar,
+.zhongli.character-guide::-webkit-scrollbar {
   width: 2px;
 }
 
@@ -86,10 +87,6 @@ h2 {
   border-left: 4px 0 var(--card-background);
   border-right: 4px 0 var(--card-background);
   border-radius: 4px;
-}
-
-.zhongli.character-guide::-webkit-scrollbar {
-  width: 2px;
 }
 
 .zhongli.character-guide::-webkit-scrollbar-thumb {
