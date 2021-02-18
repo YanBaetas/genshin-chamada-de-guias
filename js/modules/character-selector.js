@@ -236,7 +236,7 @@ export default class characterSelector {
         <h2>Geo</h2>
         <p>
           A Resonância Elemental de Geo recebeu um buff aumentando a força dos escudos em 15%, além de garantir 15% de dano adicional 
-          e diminuir 20% de resistência Geo dos inimigos em 20% ao causar dano enquanto protegido por um escudo.
+          e diminuir 20% de resistência Geo dos inimigos ao causar dano enquanto protegido por um escudo.
         </p>
       </div>
 
