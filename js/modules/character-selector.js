@@ -187,7 +187,7 @@ export default class characterSelector {
           </div>
           <p>2 Gladiador / 2 Sombra Verde</p>
           <h4>Atributos Principais</h4>
-          <p>Atq% > Dano Anemo > Dano Crit</p>
+          <p>Atq% - Dano Anemo - Dano Crit</p>
           <h4>Sub-Atributos</h4>
           <p>Dano Crit > Taxa Crit > Atq > Recarga</p>
           <h3>Armas</h3>
@@ -314,7 +314,7 @@ export default class characterSelector {
           </div>
           <p>2 Cavaleiro Sanguinário / 2 Gladiador</p>
           <h4>Atributos Principais</h4>
-          <p>Atq% > Dano Físico > Dano Crit</p>
+          <p>Atq% - Dano Físico - Dano Crit</p>
           <h4>Sub-Atributos</h4>
           <p>Dano Crit > Taxa Crit > Atq > HP</p>
           <h3>Armas</h3>
@@ -352,7 +352,7 @@ export default class characterSelector {
           </div>
           <p>2 Ritual Real / 2 Pedra Arcaica</p>
           <h4>Atributos Principais</h4>
-          <p>Atq% > Dano Geo > Dano Crit</p>
+          <p>Atq% - Dano Geo - Dano Crit</p>
           <h4>Sub-Atributos</h4>
           <p>Dano Crit > Taxa Crit > Atq > HP/Recarga</p>
           <h3>Armas</h3>
@@ -390,7 +390,7 @@ export default class characterSelector {
           </div>
           <p>4 Pedra Arcaica</p>
           <h4>Atributos Principais</h4>
-          <p>HP%/Atq > HP%/Dano Geo > HP%/Dano Crit</p>
+          <p>HP%/Atq - HP%/Dano Geo - HP%/Dano Crit</p>
           <h4>Sub-Atributos</h4>
           <p>HP > Dano Crit > Taxa Crit > Atq/Recarga</p>
           <h3>Armas</h3>
